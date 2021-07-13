@@ -1,0 +1,57 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        x:Class="Toope_Varastonhallinta.MainWindow"
+        Title="Toope Varastonhallinta">
+	<StackPanel>
+		<TextBlock HorizontalAlignment="Center" FontWeight="UltraBold" FontSize="50">Tuotteet</TextBlock>
+		<ListBox x:Name="Tuotelista" >
+			<ListBox.ItemTemplate>
+				<DataTemplate>
+						<TextBlock  FontSize="20" Text="{Binding TuotteenNimi}"/>
+				</DataTemplate>
+			</ListBox.ItemTemplate>
+		</ListBox>
+		<ListBox x:Name="Varastosaldot">
+			<ListBox.ItemTemplate>
+				<DataTemplate>
+					<StackPanel>
+						<TextBlock  FontSize="20" Text="{Binding VarastonNimi}"/>
+						<TextBlock  FontSize="20" Text="{Binding Saldo}"/>
+					</StackPanel>
+				</DataTemplate>
+			</ListBox.ItemTemplate>
+		</ListBox>
+		<StackPanel HorizontalAlignment="Center">
+			<TextBlock HorizontalAlignment="Center" FontWeight="UltraBold" FontSize="50">Luo varasto</TextBlock>
+			<TextBox x:Name="txtVarasto"></TextBox>
+			<Button x:Name="btnLuoVarasto">Luo uusi</Button>
+		</StackPanel>
+		<StackPanel HorizontalAlignment="Center">
+			<TextBlock HorizontalAlignment="Center" FontWeight="UltraBold" FontSize="50">Luo tuote</TextBlock>
+			<TextBox x:Name="txtTuote"></TextBox>
+			<Button x:Name="btnLuoTuote">Luo uusi</Button>
+		</StackPanel>
+		<StackPanel HorizontalAlignment="Center">
+			<TextBlock HorizontalAlignment="Center" FontWeight="UltraBold" FontSize="50">Lisää/Poista varastosta</TextBlock>
+			<ComboBox x:Name="cbVarastot">
+				<ComboBox.ItemTemplate>
+					<DataTemplate>
+						<TextBlock  FontSize="20" Text="{Binding VarastonNimi}"/>
+					</DataTemplate>
+				</ComboBox.ItemTemplate>
+			</ComboBox>
+			<ComboBox x:Name="cbTuotteet">
+				<ComboBox.ItemTemplate>
+					<DataTemplate>
+						<TextBlock  FontSize="20" Text="{Binding TuotteenNimi}"/>
+					</DataTemplate>
+				</ComboBox.ItemTemplate>
+			</ComboBox>
+			<TextBox x:Name="txtMaara"></TextBox>
+			<Button x:Name="btnLisaaVarastoon">Lisää/Poista</Button>
+		</StackPanel>
+	</StackPanel>
+</Window>
